@@ -78,7 +78,7 @@ class login(base.base):
 			'password': self.get_argument('password' ,None),
 		}	
 
-		valid = get_form().validation('login.validation()',form)
+		valid = get_form().validation('login.login()',form)
 		if 'status' in valid:
 			if valid['status'] == False:
 				for message in valid['errors']:
@@ -163,7 +163,7 @@ class users_edit(base.base):
 
 				self._render('admin/users.html',datos)
 			else: 
-				self._rebder('admin/status/403.html')	
+				self._render('admin/status/403.html')	
 		else:
 			self.set_message_error('Debes estar logeado para acceder a este lugar')
 			self.redirect('/login')		

@@ -57,7 +57,6 @@ class login():
 		return _form
 
 	def validation(self,data,edit):
-		print data
 		_validation = { 'status': True,'errors': list()}
 
 		user = self.db.users.find_one({'username': data['username'].lower()})
