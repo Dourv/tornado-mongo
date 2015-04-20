@@ -1,8 +1,6 @@
 Tornado-Mongo
 ===================
 
-Sobre
--------
 Hola, este repositorio fue creado con el simple objetivo de facilitar el inicio de un proyecto en tornado, usando **mongodb** como base de datos, Siéntanse libre de apoyar o hacer sus comentarios **(Constructivos).**
 
 ----------
