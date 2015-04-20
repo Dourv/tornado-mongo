@@ -1,0 +1,67 @@
+{% extends ../templates/admin/index.html %}
+{% block title %}Instalación{% end %}
+
+{% block style %}
+	<link rel="stylesheet" type="text/css" href="/admin/static/css/normalize.css">
+	<link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/material.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/ripples.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/material-wfont.css">
+	<link rel="stylesheet" href="/admin/static/css/style.css">
+{% end %}
+
+
+{% block body %}
+<div class="container">
+	<div class="row">
+		{% if errors %}
+	      {% for e in errors %}
+	        <div class="alert alert-dismissable alert-danger">
+	            <button type="button" class="close" data-dismiss="alert">×</button>
+	            {{e}}
+	        </div>
+
+	      {% end %}
+	    {% end %}
+	    {% if messages %}
+	      {% for e in messages %}
+	        <div class="alert alert-dismissable alert-success">
+	            <button type="button" class="close" data-dismiss="alert">×</button>
+	            {{e}}
+	        </div>
+
+	      {% end %}
+	    {% end %}	
+
+
+		<h1>Ingresar </h1>
+		<div class="well bs-component clearfix"> 
+			{% raw _data['form'] %}
+		</div>	
+	</div>		
+</div>	
+	
+
+
+
+{% end %}
+
+
+{% block script %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/material.min.js"></script>
+<!-- <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/material.min.js.map" ></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/ripples.js"></script>
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/ripples.min.js.map"></script> -->
+<script type="text/javascript">
+$(function() {
+    $.material.init();
+});
+
+</script>
+{% end %}
+
+

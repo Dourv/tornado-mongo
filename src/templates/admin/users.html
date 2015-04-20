@@ -1,0 +1,38 @@
+{% extends ../templates/admin/index.html %}
+{% block title %} Administración :: Usuarios {% end %}
+
+{% block nav-home %}{% end %}
+{% block nav-users %} class="active" {% end %}
+
+{% block content-admin %}
+	<div class="well bs-component clearfix"> 
+		{% raw _data['form'] %}
+	</div>	
+
+	<h2>Lista de usuarios</h2>
+	<div class="well bs-component clearfix"> 
+	{% if _data['users'].count() > 0 %}
+	{% for user in _data['users'] %}
+		<div class="container">
+			<div class="row">	
+				<div class="col-md-3">{{user['first_name']}} {{user['last_name'] }}</div>
+				<div class="col-md-3">{{user['rol']}}</div>
+
+				<div class="col-md-3"><a href="/admin/users/edit/{{user['_id']}}"> Editar</a> </div>
+				<div class="col-md-3"> Desactivar </div>
+			</div>	
+		</div>
+	{% end %}
+	{% else %}
+		<div class="container">
+			<div class="row">	
+				<div class="col-md-12"> No hay roles ='( </div>
+			</div>
+		</div>
+	{% end %}
+
+
+
+{% end%}
+
+

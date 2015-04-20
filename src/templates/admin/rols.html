@@ -1,0 +1,36 @@
+{% extends ../templates/admin/index.html %}
+{% block title %} Administración :: Roles {% end %}
+
+{% block nav-home %}{% end %}
+{% block nav-rols %} class="active" {% end %}
+
+{% block content-admin %}
+	<h2>Agregar Rol</h2>
+	<div class="well bs-component clearfix"> 
+		{% raw _data['form'] %}
+	</div>	
+
+
+	<h2>Lista de Roles</h2>
+	<div class="well bs-component clearfix"> 
+	{% if _data['rols'].count() > 0 %}
+	{% for rol in _data['rols'] %}
+		<div class="container">
+			<div class="row">	
+				<div class="col-md-6">{{rol['name']}} ({{ len(rol['permissions']) }})</div>
+				<div class="col-md-3"><a href="/admin/rols/edit/{{rol['_id']}}"> Editar</a> </div>
+				<div class="col-md-3"><a href="/admin/rols/delete/{{rol['_id']}}"> Eliminar</a>  </div>
+			</div>	
+		</div>
+	{% end %}
+	{% else %}
+		<div class="container">
+			<div class="row">	
+				<div class="col-md-12"> No hay roles ='( </div>
+			</div>
+		</div>
+	{% end %}
+
+
+	</div>	
+{% end%}

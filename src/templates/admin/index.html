@@ -1,0 +1,86 @@
+{% extends ../templates/index.html %}
+{% block title %} Administración {% end %}
+
+{% block style %}
+	<link rel="stylesheet" type="text/css" href="/admin/static/css/normalize.css">
+	 <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/material.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/ripples.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/material-wfont.css">
+
+
+	<link rel="stylesheet" href="/admin/static/css/style.css">
+{% end %}
+
+
+
+{% block body %}
+	<div class="container">
+		<div class="navbar navbar-default">
+		    <div class="navbar-header">
+		        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		        </button>
+		    </div>
+		    <div class="navbar-collapse collapse navbar-responsive-collapse">
+		        <ul class="nav navbar-nav">
+		            <li {% block nav-home %}class="active"{% end %}><a href="/admin">Inicio</a></li>
+		            <li {% block nav-users %}{% end %}><a href="/admin/users">Usuarios</a></li>
+		            <li {% block nav-rols %}{% end %}><a href="/admin/rols">Roles</a></li>
+		            <li {% block nav-permissions %}{% end %}><a href="/admin/permissions">Permisos</a></li>
+		            
+		        </ul>
+		    </div>
+		</div>
+
+
+		{% if errors %}
+	      {% for e in errors %}
+	        <div class="alert alert-dismissable alert-danger">
+	            <button type="button" class="close" data-dismiss="alert">×</button>
+	            {{e}}
+	        </div>
+
+	      {% end %}
+	    {% end %}
+	    {% if messages %}
+	      {% for e in messages %}
+	        <div class="alert alert-dismissable alert-success">
+	            <button type="button" class="close" data-dismiss="alert">×</button>
+	            {{e}}
+	        </div>
+
+	      {% end %}
+	    {% end %}			
+
+	  <div class="row">
+	  	<section class="col-md-12 col-lg-12">
+			{% block content-admin %}
+				<h2>Bienvenido(a) {% if user != None %}{{user['first_name']}} {{user['last_name']}} {% end %}</h2>
+				<p> Este es el panel administrativo básico para este framework. :D saludos.</p>
+			{% end %}	  		
+	  	</section>
+	  </div>
+	</div>  	
+{% end %}
+
+
+
+{% block script %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/material.min.js"></script>
+<!-- <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/material.min.js.map" ></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/ripples.js"></script>
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/ripples.min.js.map"></script> -->
+<script type="text/javascript">
+$(function() {
+    $.material.init();
+});
+
+</script>
+{% end %}

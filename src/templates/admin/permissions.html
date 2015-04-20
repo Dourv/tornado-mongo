@@ -1,0 +1,35 @@
+{% extends ../templates/admin/index.html %}
+{% block title %} Administración :: Permisos {% end %}
+
+{% block nav-home %}{% end %}
+{% block nav-permissions %} class="active" {% end %}
+
+{% block content-admin %}
+	<h2>Agregar Permisos</h2>
+	<div class="well bs-component clearfix"> 
+		{% raw _data['form'] %}
+	</div>	
+
+	<h2>Lista de Permisos</h2>
+	<div class="well bs-component clearfix"> 
+	{% if _data['permissions'].count() > 0 %}
+	{% for permission in _data['permissions'] %}
+		<div class="container">
+			<div class="row">	
+				<div class="col-md-6">{{permission['name']}}</div>
+				<div class="col-md-3"><a href="/admin/permissions/edit/{{permission['_id']}}"> Editar</a> </div>
+				<div class="col-md-3"><a href="/admin/permissions/delete/{{permission['_id']}}"> Eliminar</a> </div>
+			</div>	
+		</div>
+	{% end %}
+	{% else %}
+		<div class="container">
+			<div class="row">	
+				<div class="col-md-12"> No hay permisos ='( </div>
+			</div>
+		</div>
+	{% end %}
+	</div>	
+	
+
+{% end%}
