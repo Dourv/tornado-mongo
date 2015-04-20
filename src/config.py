@@ -10,14 +10,14 @@ debug = True
 
 # Database Configure 
 # Base de datos para producción
-psw = 'dourv_dev'
-host = 'dourv.com'
+psw = 'localhost'
+host = 'localhost'
 user = 'root'
 port = 27017
 
 
 
-database = 'ext'
+database = 'tornado-mongo'
 
 
 
