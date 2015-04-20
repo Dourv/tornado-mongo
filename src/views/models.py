@@ -8,7 +8,7 @@ import config
 import pymongo
 from bson.objectid import ObjectId
 from datetime import datetime, timedelta
-from forms import login, permissions, rols, users, admin
+from forms import *
 
 
 
