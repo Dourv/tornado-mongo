@@ -23,13 +23,16 @@ class rols():
 				'class' : 'form-horizontal',
 				'error-class' : ''},
 			'fields': [{
-					'name': 'rol_name',
-					'placeholder': 'Nombre del Rol',
 					'required':True,
 					'widget': 'text',
-					'class': 'form-control floating-label',
-					'form-group-class': 'col-md-12',
-					'attributes': 'data-hint="Escriba el nombre del rol"'
+					'attributes': {
+						'data-hint' : 'Escriba el nombre del rol',
+						'class': 'form-control floating-label',
+						'placeholder': 'Nombre del Rol',
+						'name': 'rol_name'
+					}, 
+					'form-group-class': 'col-md-12'
+					
 				}]
 		}
 
@@ -38,8 +41,12 @@ class rols():
 		for permission in permissions:
 			name = permission['name']
 			field = {
-				'name': name,
 				'widget': 'checkbox',
+				'attributes' : {
+					'name': name,
+					'class': 'checkbox'
+
+				},
 				'form-group-class': 'col-md-4'
 			}
 
@@ -47,15 +54,13 @@ class rols():
 
 		
 		submit = {
-					'name': 'submit', 
-					'class': 'btn btn-primary',
-					'form-group-class': 'col-md-12',
 					'widget':'submit',
-					'value': 'Añadir Rol',
-					'reset': {
-						'value':'Limpiar Formulario',
-						'class':'btn btn-default'
-					}
+					'attributes':{
+						'name': 'submit',
+						'class': 'btn btn-primary', 
+						'value': 'Crear nuevo Usuario'
+					},
+					'form-group-class': 'col-md-6'
 				}	
 
 		form['fields'].append(submit)		
@@ -71,19 +76,23 @@ class rols():
 				'class' : 'form-horizontal',
 				'error-class' : ''},
 			'fields': [{
-					'name': 'rol_name',
-					'placeholder': 'Nombre del Rol',
 					'required':True,
-					'value': data['name'],
 					'widget': 'text',
-					'class': 'form-control floating-label',
-					'form-group-class': 'col-md-12',
-					'attributes': 'data-hint="Escriba el nombre del rol"'
+					'attributes': {
+						'data-hint' : 'Escriba el nombre del rol',
+						'class': 'form-control floating-label',
+						'placeholder': 'Nombre del Rol',
+						'name': 'rol_name',
+						'value': data['name']
+					}, 
+					'form-group-class': 'col-md-12'
 				},
 				{
-					'name':'id',
 					'widget':'hidden',
-					'value': id
+					'attributes':{
+						'value': id,
+						'name':'id'
+					}
 				}
 
 			]
@@ -94,27 +103,28 @@ class rols():
 		for permission in permissions:
 			name = permission['name']
 			field = {
+				'widget': 'checkbox',
+				'attributes' : {
 					'name': name,
-					'widget': 'checkbox',
-					'form-group-class': 'col-md-4'
-				}
+					'class': 'checkbox'
+				},
+				'form-group-class': 'col-md-4'
+			}
 			if name in data['permissions']:
-				field['attributes'] = 'checked="True"'
+				field['attributes']['checked'] = 'True'
 
 			form['fields'].append(field)
 
 		
 		submit = {
-					'name': 'submit', 
-					'class': 'btn btn-primary',
 					'widget':'submit',
-					'value': 'Añadir Rol',
-					'form-group-class': 'col-md-12',
-					'reset': {
-						'value':'Limpiar Formulario',
-						'class':'btn btn-default'
-					}
-				}	
+					'attributes':{
+						'name': 'submit',
+						'class': 'btn btn-primary', 
+						'value': 'Crear nuevo Usuario'
+					},
+					'form-group-class': 'col-md-6'
+				}		
 
 		form['fields'].append(submit)		
 

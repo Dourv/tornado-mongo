@@ -28,12 +28,9 @@
 		            <li {% block nav-users %}{% end %}><a href="/admin/users">Usuarios</a></li>
 		            <li {% block nav-rols %}{% end %}><a href="/admin/rols">Roles</a></li>
 		            <li {% block nav-permissions %}{% end %}><a href="/admin/permissions">Permisos</a></li>
-		            
 		        </ul>
 		    </div>
 		</div>
-
-
 		{% if errors %}
 	      {% for e in errors %}
 	        <div class="alert alert-dismissable alert-danger">

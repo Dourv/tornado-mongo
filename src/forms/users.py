@@ -59,80 +59,103 @@ class users():
 			},
 			'fields': [
 				{
-					'name': 'username',
-					'placeholder': 'Username',
+					
 					'required':True,
 					'widget':'text',
-					'class': 'form-control floating-label',
+					'attributes': {
+						'class': 'form-control floating-label',
+						'data-hint':'Por favor escriba el usuario que usara para ingresar',
+						'name': 'username',
+						'placeholder': 'Username'
+					},
 					'form-group-class': 'col-md-12',
-					'attributes': 'data-hint="Por favor escriba el usuario que usara para ingresar"'
 				},
 				{
-					'name': 'first_name',
-					'placeholder': 'Nombre',
 					'required':True,
 					'widget':'text',
-					'class': 'form-control floating-label',
+					'attributes': {
+						'class': 'form-control floating-label',
+						'data-hint':'Escriba el nombre del usuario',
+						'name': 'first_name',
+						'placeholder': 'Nombre'
+					},
 					'form-group-class': 'col-md-12',
-					'attributes': 'data-hint="Escriba el nombre del usuario"'
 				},
 				{
-					'name': 'last_name',
-					'placeholder': 'Last Name',
 					'required':True,
 					'widget':'text',
-					'class': 'form-control floating-label',
+					'attributes':{
+						'class': 'form-control floating-label',
+						'data-hint':'Escriba el apellido del usuario',
+						'name': 'last_name',
+						'placeholder': 'Last Name'
+					},	
 					'form-group-class': 'col-md-12',
-					'attributes': 'data-hint="Escriba el apellido del usuario"'
 				},
 				{
-					'name': 'email',
-					'placeholder': 'Email',
 					'required':True,
 					'widget':'email',
-					'class': 'form-control floating-label',
+					'attributes':{
+						'class': 'form-control floating-label',
+						'data-hint':'Escriba el correo electronico del Usuario',
+						'name': 'email',
+						'placeholder': 'Email'
+					},
 					'form-group-class': 'col-md-12',
-					'attributes': 'data-hint="Escriba el correo electronico del Usuario"'
 				},
 				{
-					'name': 'rol',
 					'required':True,
 					'widget':'select',
-					'class': 'form-control',
+					'attributes':{
+						'name': 'rol',
+						'class': 'form-control',
+						'placeholder' : 'Seleccione un Rol de Usuario',
+					},	
 					'label_class':'col-lg-1 control-label',
 					'form-group-class': 'col-md-12',
-					'placeholder' : 'Seleccione un Rol de Usuario',
 					'options': list()
 				},
 				{
-					'name': 'password',
-					'placeholder': 'Password',
 					'required':True,
 					'widget':'password',
-					'class': 'form-control floating-label',
+					'attributes': {
+						'data-hint':"Escriba la contraseña para el usuario",
+						'name': 'password',
+						'placeholder': 'Password',
+						'class': 'form-control floating-label',
+					},	
 					'form-group-class': 'col-md-12',
-					'attributes': 'data-hint="Escriba la contraseña para el usuario"',
 				},
 				{
-					'name': 'password_confirm',
-					'placeholder': 'Confirm Password',
 					'required':True,
 					'widget':'password',
-					'class': 'form-control floating-label',
+					'attributes': {
+						'data-hint':'Confirme la contraseña del usuario',
+						'class': 'form-control floating-label',
+						'placeholder': 'Confirm Password',
+						'name': 'password_confirm',
+					},
 					'form-group-class': 'col-md-12',
-					'attributes': 'data-hint="Confirme la contraseña del usuario"'
 				},
 				{
-					'name': 'submit', 
-					'class': 'btn btn-primary',
 					'widget':'submit',
-					'value': 'Añadir usuario',
-					'form-group-class': 'col-md-12',
-					'reset': {
-						'value':'Limpiar Formulario',
-						'class':'btn btn-default'
-					}
-				}
+					'attributes':{
+						'name': 'submit',
+						'class': 'btn btn-primary', 
+						'value': 'Crear nuevo Usuario'
+					},
+					'form-group-class': 'col-md-6'					
+				},	
+
+				{
+					'widget':'reset',
+					'attributes':{
+						'name': 'submit',
+						'class': 'btn btn-default', 
+						'value': 'Limpiar formulario'
+					},
+					'form-group-class': 'col-md-6'					
+				}	
 			]
 		}
 
@@ -158,87 +181,114 @@ class users():
 			},
 			'fields': [
 				{
-					'name': 'username',
-					'placeholder': 'Username',
-					'value': user['username'],
+					
 					'required':True,
 					'widget':'text',
-					'class': 'form-control floating-label',
+					'attributes': {
+						'class': 'form-control floating-label',
+						'data-hint':'Por favor escriba el usuario que usara para ingresar',
+						'name': 'username',
+						'placeholder': 'Username',
+						'value' : user['username']
+					},
 					'form-group-class': 'col-md-12',
-					'attributes': 'data-hint="Por favor escriba el usuario que usara para ingresar"'
 				},
 				{
-					'name': 'first_name',
-					'placeholder': 'Nombre',
-					'value': user['first_name'],
 					'required':True,
 					'widget':'text',
-					'class': 'form-control floating-label',
+					'attributes': {
+						'class': 'form-control floating-label',
+						'data-hint':'Escriba el nombre del usuario',
+						'name': 'first_name',
+						'placeholder': 'Nombre',
+						'value' : user['first_name']
+					},
 					'form-group-class': 'col-md-12',
-					'attributes': 'data-hint="Escriba el nombre del usuario"'
 				},
 				{
-					'name': 'last_name',
-					'placeholder': 'Last Name',
-					'value': user['last_name'],
 					'required':True,
 					'widget':'text',
-					'class': 'form-control floating-label',
+					'attributes':{
+						'class': 'form-control floating-label',
+						'data-hint':'Escriba el apellido del usuario',
+						'name': 'last_name',
+						'placeholder': 'Last Name',
+						'value': user['last_name']
+					},	
 					'form-group-class': 'col-md-12',
-					'attributes': 'data-hint="Escriba el apellido del usuario"'
 				},
 				{
-					'name': 'email',
-					'placeholder': 'Email',
-					'value': user['email'],
 					'required':True,
 					'widget':'email',
-					'class': 'form-control floating-label',
+					'attributes':{
+						'class': 'form-control floating-label',
+						'data-hint':'Escriba el correo electronico del Usuario',
+						'name': 'email',
+						'placeholder': 'Email',
+						'value': user['email']
+					},
 					'form-group-class': 'col-md-12',
-					'attributes': 'data-hint="Escriba el correo electronico del Usuario"'
 				},
 				{
-					'name': 'rol',
 					'required':True,
 					'widget':'select',
-					'class': 'form-control',
+					'attributes':{
+						'name': 'rol',
+						'class': 'form-control',
+						'placeholder' : 'Seleccione un Rol de Usuario',
+					},	
 					'label_class':'col-lg-1 control-label',
 					'form-group-class': 'col-md-12',
-					'placeholder' : 'Seleccione un Rol de Usuario',
 					'options': list()
 				},
 				{
-					'name': 'password',
-					'placeholder': 'Password',
+					'required':True,
 					'widget':'password',
-					'class': 'form-control floating-label',
+					'attributes': {
+						'data-hint':"Escriba la contraseña para el usuario",
+						'name': 'password',
+						'placeholder': 'Password',
+						'class': 'form-control floating-label',
+					},	
 					'form-group-class': 'col-md-12',
-					'attributes': 'data-hint="Escriba la contraseña para el usuario"',
 				},
 				{
-					'name': 'password_confirm',
-					'placeholder': 'Confirm Password',
+					'required':True,
 					'widget':'password',
-					'class': 'form-control floating-label',
+					'attributes': {
+						'data-hint':'Confirme la contraseña del usuario',
+						'class': 'form-control floating-label',
+						'placeholder': 'Confirm Password',
+						'name': 'password_confirm',
+					},
 					'form-group-class': 'col-md-12',
-					'attributes': 'data-hint="Confirme la contraseña del usuario"'
 				},
 				{
-					'name':'id',
 					'widget':'hidden',
-					'value': id
+					'attributes': {
+						'value': id,
+						'name':'id'
+					}
 				},
 				{
-					'name': 'submit', 
-					'class': 'btn btn-primary',
 					'widget':'submit',
-					'value': 'Añadir usuario',
-					'form-group-class': 'col-md-12',
-					'reset': {
-						'value':'Limpiar Formulario',
-						'class':'btn btn-default'
-					}
-				}
+					'attributes':{
+						'name': 'submit',
+						'class': 'btn btn-primary', 
+						'value': 'Crear nuevo Usuario'
+					},
+					'form-group-class': 'col-md-6'					
+				},	
+
+				{
+					'widget':'reset',
+					'attributes':{
+						'name': 'submit',
+						'class': 'btn btn-default', 
+						'value': 'Limpiar formulario'
+					},
+					'form-group-class': 'col-md-6'					
+				}	
 			]
 		}
 

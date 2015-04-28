@@ -27,30 +27,48 @@ class login():
 			},
 			'fields': [
 				{
-					'name': 'username',
-					'placeholder': 'Username',
 					'required':True,
 					'widget':'text',
-					'class': 'form-control floating-label',
-					'form-group-class': 'col-md-12',
-					'attributes': 'data-hint="Por favor escriba el usuario para ingresar"'
+					'attributes': {
+						'class': 'form-control floating-label',
+						'data-hint': 'Por favor escriba el usuario para ingresar',
+						'id' : 'username',
+						'name': 'username',
+						'placeholder': 'Username'
+					},
+					'form-group-class': 'col-md-12'
 				},
 				{
-					'name': 'password',
-					'placeholder': 'Contraseña',
 					'required':True,
 					'widget':'password',
-					'class': 'form-control floating-label',
-					'form-group-class': 'col-md-12',
-					'attributes': 'data-hint="Escriba su contraseña de usuario"'
+					'attributes':  {
+						'class': 'form-control floating-label',
+						'data-hint': 'Escriba su contraseña de usuario',
+						'form-group-class': 'col-md-12',
+						'id': 'contraseña',
+						'name': 'password',
+						'placeholder': 'Contraseña'
+					},
+					'form-group-class': 'col-md-12'	
 				},
 				{
-					'name': 'submit', 
-					'class': 'btn btn-primary',
-					'form-group-class': 'col-md-12',
 					'widget':'submit',
-					'value': 'Ingresar',
-					
+					'attributes':{
+						'name': 'submit',
+						'class': 'btn btn-primary', 
+						'value': 'Ingresar'
+					},
+					'form-group-class': 'col-md-6'					
+				},	
+
+				{
+					'widget':'reset',
+					'attributes':{
+						'name': 'submit',
+						'class': 'btn btn-default', 
+						'value': 'Limpiar formulario'
+					},
+					'form-group-class': 'col-md-6'					
 				}	
 			]	
 		}
