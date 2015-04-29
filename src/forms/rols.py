@@ -58,7 +58,7 @@ class rols():
 					'attributes':{
 						'name': 'submit',
 						'class': 'btn btn-primary', 
-						'value': 'Crear nuevo Usuario'
+						'value': 'Crear nuevo rol'
 					},
 					'form-group-class': 'col-md-6'
 				}	
@@ -121,7 +121,7 @@ class rols():
 					'attributes':{
 						'name': 'submit',
 						'class': 'btn btn-primary', 
-						'value': 'Crear nuevo Usuario'
+						'value': 'Guardar'
 					},
 					'form-group-class': 'col-md-6'
 				}		

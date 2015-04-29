@@ -26,24 +26,26 @@ class permissions():
 			},
 			'fields': [
 				{
-					'name': 'permission_name',
-					'placeholder': 'Nombre del Permiso',
 					'required':True,
 					'widget':'text',
-					'class': 'form-control floating-label',
+					'attributes': {
+						'data-hint':'Escriba el nombre del permiso',
+						'name': 'permission_name',
+						'placeholder': 'Nombre del Permiso',
+						'class': 'form-control floating-label',
+					},	
 					'form-group-class': 'col-md-12',
-					'attributes': 'data-hint="Escriba el nombre del permiso"'
 				},
 				{
-					'name': 'submit', 
-					'class': 'btn btn-primary',
+	
 					'widget':'submit',
-					'value': 'Añadir Permiso',
-					'form-group-class': 'col-md-12',
-					'reset': {
-						'value':'Limpiar Formulario',
-						'class':'btn btn-default'
-					}
+					'attributes':{
+						'name': 'submit',
+						'class': 'btn btn-primary', 
+						'value': 'Crear Permiso'
+					},
+					'form-group-class': 'col-md-6'
+
 				}
 			]
 		}
@@ -61,29 +63,34 @@ class permissions():
 			},
 			'fields': [
 				{
-					'name': 'permission_name',
-					'placeholder': 'Nombre del Permiso',
 					'required':True,
 					'widget':'text',
-					'class': 'form-control floating-label',
-					'form-group-class': 'col-md-12',
-					'attributes': 'data-hint="Escriba el nombre del permiso"',
-					'value': data['name']
+					'attributes': {
+						'data-hint' :'Escriba el nombre del permiso',
+						'class': 'form-control floating-label',
+						'name': 'permission_name',
+						'placeholder': 'Nombre del Permiso',
+						'value': data['name']
+					},	
+					'form-group-class': 'col-md-12'
 				},
 				{
-					'name': 'submit', 
-					'class': 'btn btn-primary',
+	
 					'widget':'submit',
-					'value': 'Añadir Permiso',
-					'reset': {
-						'value':'Limpiar Formulario',
-						'class':'btn btn-default'
-					}
+					'attributes':{
+						'name': 'submit',
+						'class': 'btn btn-primary', 
+						'value': 'Guardar Permiso'
+					},
+					'form-group-class': 'col-md-6'
+
 				},
 				{
-					'name':'id',
 					'widget':'hidden',
-					'value': id
+					'attributes': {
+						'name':'id',
+						'value': id
+					}
 				}
 
 			]
